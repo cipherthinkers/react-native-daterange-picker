@@ -22,6 +22,7 @@ const DateRangePicker = ({
   endDate,
   onChange,
   displayedDate,
+  renderChildren,
   minDate,
   date,
   maxDate,
@@ -397,10 +398,16 @@ const DateRangePicker = ({
           </View>
         </View>
       </View>
-      {node}
+      {
+        (renderChildren) ?
+          node
+          : null
+      }
     </>
   ) : (
-    <>{node}</>
+    (renderChildren) ?
+      <>{node}</>
+      : null
   );
 };
 
